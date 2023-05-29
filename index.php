@@ -38,32 +38,32 @@ if (!isset($_SESSION["file"])) {
     </nav>
 </div>
 <?php if ($_SERVER["DOCUMENT_URI"] == "/catalogProject/index.php") {?>
-<section class="cards">
-    <div class="cards__row">
-        <?php foreach ($_SESSION["file"] as $catalogName => $catalogFiles) {
-            foreach ($catalogFiles as $fileID => $fileData) {
-                if (!$fileData["favorites"]){ continue;} ?>
-            <div class="cards__column">
-                <div class="cards__item">
-                    <div class="cards__image">
-                        <a href="image_form.php?catalog=<?= $catalogName ?>&image=<?= $fileID ?>">
-                            <img src="images/<?= $catalogName?>/<?= $fileData["image"] ?>" title="<?= $fileData["image"] ?>" alt="">
-                        </a>
-                    </div>
-                    <div class="items__body">
-                        <div class="items__label">
-                            <?= $fileData["date"] ?? "-" ?>
+    <section class="cards">
+        <div class="cards__row">
+            <?php foreach ($_SESSION["file"] as $catalogName => $catalogFiles) {
+                foreach ($catalogFiles as $fileID => $fileData) {
+                    if (!$fileData["favorites"]){ continue;} ?>
+                    <div class="cards__column">
+                        <div class="cards__item">
+                            <div class="cards__image">
+                                <a href="image_form.php?catalog=<?= $catalogName ?>&image=<?= $fileID ?>">
+                                    <img src="images/<?= $catalogName?>/<?= $fileData["image"] ?>" title="<?= $fileData["image"] ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="items__body">
+                                <div class="items__label">
+                                    <?= $fileData["date"] ?? "-" ?>
+                                </div>
+                                <div class="items__text">
+                                    <?= $fileData["title"] ?? "-" ?>
+                                </div>
+                            </div>
                         </div>
-                        <div class="items__text">
-                            <?= $fileData["title"] ?? "-" ?>
-                        </div>
                     </div>
-                </div>
-            </div>
+                <?php } ?>
             <?php } ?>
-        <?php } ?>
-    </div>
-</section>
+        </div>
+    </section>
 <?php } ?>
 </body>
 </html>
