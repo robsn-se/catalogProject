@@ -1,0 +1,1 @@
+<?php include "image_box.php" ?>
