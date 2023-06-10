@@ -13,8 +13,8 @@ require_once "controller.php";
 </head>
 <body>
 <?php
-echo "<pre>";
-echo "</pre>";
+echo '<pre>', print_r( $_SESSION, 1), '</pre>';
+
     if (isset($_GET["page"]) && file_exists("templates/{$_GET["page"]}.php")) {
         include "templates/{$_GET["page"]}.php";
     }

@@ -4,6 +4,7 @@ const FILE_FOLDER = "images";
 if (!isset($_SESSION["file"])) {
     $catalogs = array_diff(scandir(FILE_FOLDER), ["..", "."]);
     foreach ($catalogs as $catalog) {
+
         $_SESSION["favorites"][$catalog] = [];
         foreach (array_diff(scandir(FILE_FOLDER . "/$catalog"), ["..", "."]) as $file) {
             $_SESSION["file"][$catalog][] = [
@@ -13,6 +14,8 @@ if (!isset($_SESSION["file"])) {
             ];
         }
     }
+    echo '<pre>', print_r( $catalogs, 1), '</pre>';
+
 }
 
 if (isset($_GET['image']) && isset($_GET['catalog'])) {
