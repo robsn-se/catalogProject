@@ -2,7 +2,7 @@
     <div class="cards__item">
         <div class="cards__image">
             <a href="<?= $imageTemplateTransitionLink ?>">
-                <img src="<?= $imageTemplateSRC ?>" alt="">
+                <img src="<?= $imageTemplateSRC ?>" alt="" title="<?= $imageTitle ?>">
             </a>
         </div>
 

@@ -13,6 +13,10 @@ require_once "controller.php";
 </head>
 <body>
 <?php
+//Если $_GET["page"] существует, не равен null И cуществует файл $_GET["page"] тогда =>
+// подключаем файл "templates/$_GET["page"]",
+// а Если $_GET["page"] не существует, равен null И не cуществует файл $_GET["page"] тогда =>
+//подключаем файл "main.php"
 echo '<pre>', print_r( $_SESSION, 1), '</pre>';
 
     if (isset($_GET["page"]) && file_exists("templates/{$_GET["page"]}.php")) {
